@@ -68,7 +68,9 @@ class ViewController: UIViewController {
         }
         let l = input.last
         print(input)
-        if l != "count" && l != "avg" && l != "fact" {
+        if input.count < 2 {
+            return
+        } else if l != "count" && l != "avg" && l != "fact" {
             var oneNum = ""
             for i in 2...(input.count - 1) {
                 oneNum.append(input[i])
@@ -79,11 +81,13 @@ class ViewController: UIViewController {
                 calc.append(input[i])
             }
             answer = calculate(calc)
+            history += ("\n" + calcDisplay.text!)
             if answer - round(answer) == 0.0 {
                 calcDisplay.text = String(Int(round(answer)))
             } else {
                 calcDisplay.text = String(answer)
             }
+            history += (" = " + calcDisplay.text!)
         } else {
             answer = calculate(input)
             if answer - round(answer) == 0.0 {

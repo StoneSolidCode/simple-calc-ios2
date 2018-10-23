@@ -16,6 +16,7 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
 
         historyLabel.text = historyData
+        historyLabel.sizeToFit()
     }
     
     
