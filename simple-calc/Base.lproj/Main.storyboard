@@ -296,26 +296,67 @@
                     </view>
                     <connections>
                         <outlet property="calcDisplay" destination="8TJ-3j-i0I" id="b7t-Oo-AVa"/>
+                        <segue destination="6zT-wG-c1M" kind="presentation" identifier="historySegue" id="M1B-6P-kTF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="83.208395802098963"/>
         </scene>
-        <!--View Controller-->
+        <!--History View Controller-->
         <scene sceneID="MR3-7g-XxY">
             <objects>
-                <viewController id="6zT-wG-c1M" sceneMemberID="viewController">
+                <viewController id="6zT-wG-c1M" customClass="HistoryViewController" customModule="simple_calc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LGb-Vd-loS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5A-uP-Dbr">
+                                <rect key="frame" x="30" y="587" width="137" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3Hv-6I-sFZ"/>
+                                </constraints>
+                                <state key="normal" title="Return to Calculator"/>
+                                <connections>
+                                    <action selector="btnReturn:" destination="6zT-wG-c1M" eventType="touchUpInside" id="62q-Yq-Fdq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQv-ph-6si">
+                                <rect key="frame" x="30" y="50" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jy-Hd-CjT">
+                                <rect key="frame" x="30" y="91" width="315" height="350"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GFk-lw-Ngh" firstAttribute="bottom" secondItem="d5A-uP-Dbr" secondAttribute="bottom" constant="60" id="1LI-X4-UCL"/>
+                            <constraint firstItem="d5A-uP-Dbr" firstAttribute="leading" secondItem="GFk-lw-Ngh" secondAttribute="leading" priority="1" constant="45" id="A0g-gp-e9R"/>
+                            <constraint firstItem="eQv-ph-6si" firstAttribute="top" secondItem="GFk-lw-Ngh" secondAttribute="top" constant="30" id="DEy-tI-fiE"/>
+                            <constraint firstItem="3Jy-Hd-CjT" firstAttribute="leading" secondItem="GFk-lw-Ngh" secondAttribute="leading" constant="30" id="EVM-6q-d6u"/>
+                            <constraint firstItem="3Jy-Hd-CjT" firstAttribute="top" secondItem="eQv-ph-6si" secondAttribute="bottom" priority="1" constant="15" id="HWS-kf-nN8"/>
+                            <constraint firstItem="d5A-uP-Dbr" firstAttribute="leading" secondItem="GFk-lw-Ngh" secondAttribute="leading" constant="30" id="MMN-tT-fTH"/>
+                            <constraint firstItem="d5A-uP-Dbr" firstAttribute="top" secondItem="3Jy-Hd-CjT" secondAttribute="bottom" priority="10" constant="15" id="WAv-QI-lf7"/>
+                            <constraint firstItem="eQv-ph-6si" firstAttribute="leading" secondItem="GFk-lw-Ngh" secondAttribute="leading" constant="30" id="fSE-ek-ewW"/>
+                            <constraint firstItem="3Jy-Hd-CjT" firstAttribute="top" secondItem="eQv-ph-6si" secondAttribute="bottom" constant="20" id="jUF-25-xVz"/>
+                            <constraint firstItem="GFk-lw-Ngh" firstAttribute="trailing" secondItem="3Jy-Hd-CjT" secondAttribute="trailing" constant="30" id="svV-Fo-l84"/>
+                            <constraint firstItem="d5A-uP-Dbr" firstAttribute="top" secondItem="3Jy-Hd-CjT" secondAttribute="bottom" constant="15" id="xDe-pt-zWL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GFk-lw-Ngh"/>
                     </view>
+                    <connections>
+                        <outlet property="historyLabel" destination="3Jy-Hd-CjT" id="rXu-z0-Dje"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w0g-zw-YmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="83"/>
+            <point key="canvasLocation" x="821.60000000000002" y="82.3088455772114"/>
         </scene>
     </scenes>
 </document>

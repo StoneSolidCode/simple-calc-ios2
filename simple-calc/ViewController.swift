@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var history = ""
     var number = 0
     var specialOp = ""
     var input: [String] = []
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnHistoryPressed(_ sender: Any) {
+        performSegue(withIdentifier: "historySegue", sender: self)
     }
     @IBAction func btnPressed(_ sender: UIButton) {
         input.append((sender.titleLabel?.text)!)
@@ -34,6 +36,10 @@ class ViewController: UIViewController {
         }
         print(input)
         answerDisplayed = false
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC : HistoryViewController = segue.destination as! HistoryViewController
+        destVC.historyData = history
     }
 
     @IBAction func btnOperationPressed(_ sender: UIButton) {
