@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func btnHistoryPressed(_ sender: Any) {
+    }
     @IBAction func btnPressed(_ sender: UIButton) {
         input.append((sender.titleLabel?.text)!)
         if answerDisplayed {
